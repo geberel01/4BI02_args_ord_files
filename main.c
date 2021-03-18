@@ -14,19 +14,13 @@
 int i;
 FILE *FileIn;
 FILE *FileOut;
-char stringhe[20][20];
+char stringhe[20][30];
 char string[20];
 char c;
 
-int num(char *str)
-{
-    int isdigit=1;
-    int i=0;
-    for (i=0;i<strlen(str);i++)
-        if(isalpha(str[i]))
-            isdigit=0;
-    return isdigit;
-}
+int num(char *str);
+int dec2bin(char *str);
+
 
 int main(int argc, char *argv[])
 {
@@ -54,16 +48,34 @@ int main(int argc, char *argv[])
         if ( num(stringhe[i]) )
         {
             printf("is number\n");
-           
+            dec2bin(stringhe[i])
+            printf("conversione dec->bin : %s\n",);
+            i--;
         }
         
     }
 
+    //printf("valore restituito bbb-aaac:%d\n",strcmp("bbb","aaac"));
 
     
     fclose(FileIn);
     fclose(FileOut);
 
+}
+
+int num(char *str)
+{
+    int isdigit=1;
+    int i=0;
+    for (i=0;i<strlen(str);i++)
+        if(isalpha(str[i]))
+            isdigit=0;
+    return isdigit;
+}
+
+int dec2bin(char *str)
+{
+  return 0;
 }
 
 // ES. PROT. ORDINAMENTO:
